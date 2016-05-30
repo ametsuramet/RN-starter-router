@@ -15,6 +15,7 @@ import {
 
 import Feature from './Components/Feature';
 import Login from './Components/Login';
+import Signup from './Components/Signup';
 
 
 
@@ -24,6 +25,10 @@ export default class Router extends Component {
 	      case 'login' :
 	        return (<Login navigator={navigator} title={route.title} />)
 	      break;
+
+        case 'signup' :
+          return (<Signup navigator={navigator} title={route.title} />)
+        break;
 	     
 
 	      default :
@@ -35,7 +40,7 @@ export default class Router extends Component {
 	render() {
 		return (
 			  <Navigator
-			    initialRoute={{id:'feature',title:"Home"}}
+			    initialRoute={{id:'login',title:"Home"}}
 			    renderScene={ (route,navigator) => this._renderScene(route,navigator) }
   				configureScene={(route) => {
   			          if (route.sceneConfig) {

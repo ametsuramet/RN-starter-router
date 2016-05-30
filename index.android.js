@@ -14,7 +14,7 @@ import {
 
 import Router from './App/Router';
 
-class Belanza extends Component {
+class starterRouter extends Component {
   render() {
     return (
       <Router />
@@ -23,4 +23,4 @@ class Belanza extends Component {
 }
 
 
-AppRegistry.registerComponent('Belanza', () => Belanza);
+AppRegistry.registerComponent('starterRouter', () => starterRouter);

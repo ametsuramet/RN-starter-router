@@ -8,13 +8,10 @@ import {
   Navigator,
   TextInput,
   Alert,
-  Image
 } from 'react-native';
 import styles from '../Styles/login';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-export default class Login extends Component {
 
+export default class Signup extends Component { 
   constructor(props) {
     super(props);
   
@@ -23,24 +20,13 @@ export default class Login extends Component {
       textPwd:""
     };
   }
-	_pressLogin(){
-     if (this.state.textUser=='admin' && this.state.textPwd=='admin'){
-          this.props.navigator.push({id:'feature',sceneConfig:Navigator.SceneConfigs.FloatFromBottom})     
-     }else{
-      Alert.alert('Perhatian', 'Username dan password salah')
-     }
+  _pressLogin(){
+        this.props.navigator.push({id:'login',sceneConfig:Navigator.SceneConfigs.FloatFromBottom})
     }
 
-  _pressSignup(){
-    this.props.navigator.push({id:'signup',sceneConfig:Navigator.SceneConfigs.FloatFromBottom})
-  }
-
-	render() {
-		return (
+  render() {
+    return (
       <View style={styles.container}>
-        <View style={styles.halfHeight}>
-          <Image source={require('../../images/TPD.jpg')} style={styles.logo}/>
-        </View>
         <View style={styles.quarterHeight}>
           <Text>
             Username
@@ -61,8 +47,7 @@ export default class Login extends Component {
           <TouchableOpacity 
             onPress={()=>this._pressLogin()}
             underlayColor='transparent'>
-          <View style={styles.button} >
-            <Icon name="rocket" size={20} color="#FFF" style={styles.iconButton} />
+          <View style={styles.button}>
             <Text style={styles.textButton}>
               Login
             </Text>
@@ -79,6 +64,6 @@ export default class Login extends Component {
           </TouchableOpacity>
         </View>
       </View>
-		);
-	}
+    );
+  }
 }
